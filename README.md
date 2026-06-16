@@ -7,8 +7,8 @@ constraint.
 
 ## The Problem
 
-This package targets **Dart 2** (`sdk: ">=2.19.0 <3.0.0"`). Several of its
-dependencies have released newer versions that require **Dart 3+**:
+This package targets **Dart 2** (`sdk: ">=2.19.0 <3.0.0"`). The `args` dependency has released 
+newer versions that require **Dart 3+**:
 
 | Package      | Current | Latest Dart-2-compatible | Renovate proposes | Required SDK |
 |--------------|---------|--------------------------|-------------------|--------------|
