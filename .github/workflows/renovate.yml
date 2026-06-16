@@ -19,3 +19,4 @@ jobs:
           configurationFile: renovate.json
         env:
           LOG_LEVEL: debug
+          RENOVATE_REPOSITORIES: matthewnitschke-wk/renovate_pub_constraintFiltering
