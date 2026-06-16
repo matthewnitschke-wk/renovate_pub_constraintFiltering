@@ -3,12 +3,12 @@
   "extends": ["config:recommended"],
 
   "constraintsFiltering": "strict",
-   "rangeStrategy": "bump",
+  "rangeStrategy": "bump",
 
   "packageRules": [
     {
       "description": "Ignore Dart SDK environment updates",
-      "matchDatasources": ["dart-version", "flutter-version"],
+      "matchDatasources": ["dart-version"],
       "enabled": false
     }
   ]
