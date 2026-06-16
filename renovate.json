@@ -1,7 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
+
   "constraintsFiltering": "strict",
+   "rangeStrategy": "bump",
+
   "packageRules": [
     {
       "description": "Ignore Dart SDK environment updates",
