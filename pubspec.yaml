@@ -1,0 +1,22 @@
+name: constraint_filtering_demo
+description: >
+  Demonstrates that Renovate's pub manager ignores constraintsFiltering.
+  This package is pinned to Dart 2 — Renovate should not propose updates
+  that require Dart 3+, but it does because the pub datasource does not
+  support constraintsFiltering.
+
+environment:
+  sdk: ">=2.19.0 <3.0.0"
+
+dependencies:
+  # Latest Dart-2-compatible: 2.4.2 (sdk >=2.19.0 <4.0.0)
+  # Renovate proposes:        2.7.0 (sdk ^3.3.0) — BREAKS
+  args: ^2.3.1
+
+  # Latest Dart-2-compatible: 1.18.0 (sdk >=2.18.0 <4.0.0)
+  # Renovate proposes:        1.19.1 (sdk ^3.4.0) — BREAKS
+  collection: ^1.17.0
+
+  # Latest Dart-2-compatible: 1.16.0 (sdk >=2.12.0 <4.0.0)
+  # Renovate proposes:        1.18.3 (sdk ^3.5.0) — BREAKS
+  meta: ^1.15.0
