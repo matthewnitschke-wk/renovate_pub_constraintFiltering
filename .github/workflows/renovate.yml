@@ -11,12 +11,25 @@ jobs:
   renovate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
-      - uses: renovatebot/github-action@v46.1.19 # 46.1.15
+      # - uses: renovatebot/github-action@v46.1.19 # 46.1.15
+      #   with:
+      #     token: ${{ secrets.RENOVATE_TOKEN }}
+      #     configurationFile: renovate.json
+      #   env:
+      #     LOG_LEVEL: debug
+      #     RENOVATE_REPOSITORIES: matthewnitschke-wk/renovate_pub_constraintFiltering
+
+      - uses: actions/setup-node@v7
         with:
-          token: ${{ secrets.RENOVATE_TOKEN }}
-          configurationFile: renovate.json
+          node-version: '24.x'
+
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11.11.0
+
+      - run: pnpx renovate "matthewnitschke-wk/renovate_pub_constraintFiltering"
         env:
           LOG_LEVEL: debug
-          RENOVATE_REPOSITORIES: matthewnitschke-wk/renovate_pub_constraintFiltering
+          RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
